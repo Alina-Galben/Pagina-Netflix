@@ -136,9 +136,9 @@ h3 {
 }
 
 .carousel-item > .row > div {
-    transition: transform 0.5s; /*Stap 2: applico la transizione*/
+    transition: transform 0.5s; /*Stap 2: Applico la transizione*/
     transition-delay: 0.3s;
-    outline: none; /*Step 8: rimuove il focus visibile e fa in modo che su schermi piccoli non si ingrandisca la paggina quando si clicca sulle immagini*/
+    outline: none; /*Step 8: rimuove il focus visibile, fa in modo che su schermi piccoli non si ingrandisca la paggina quando si clicca sulle immagini*/
 }
 .carousel-item > .row > div:first-child {
     transform-origin: center left; /*Step 9: Ingrandisco l'immagine verso il centro */
@@ -151,8 +151,8 @@ h3 {
 
 .carousel-item > .row > div:hover {
     cursor: pointer;
-    transform: scale(1.5); /*Step 1: la foto si ingrandisce al passaggio del mous*/
-    z-index: 10; /*Step 7: Facciamo in modo che sia la foto che l'informazione passano sopra gli altri elementi*/
+    transform: scale(1.5); /*Step 1: la foto si ingrandisce al passaggio del mouse*/
+    z-index: 10; /*Step 7: Faccia in modo che sia la foto che l'informazione passano sopra gli altri elementi*/
 }
 
 .informazioni {
