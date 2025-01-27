@@ -1,0 +1,252 @@
+body {
+    background-color: rgb(20, 20, 20);
+    font-family: Arial, Helvetica, sans-serif;
+    color: white !important;
+}
+
+body * {
+    background-color: rgb(20, 20, 20);
+    color: white !important;
+}
+
+.netflix-logo {
+    width: 80px;
+    height: auto;
+}
+
+.container-fluid.container-custom {
+    display: block !important;
+}
+
+.search-input {
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    position: absolute;
+    right: 200px
+}
+.search-input.active {
+    width: 200px;
+    opacity: 1;
+}
+
+h1 {
+    font-size: 1rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    z-index: 1050;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255,255,255, 0.2);
+    border-radius: 4px;
+}
+
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu
+.dropdown.show .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu .dropdown-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Stile base delle immagini */
+.netflix-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+}
+  
+/* Aggiungo un margine tra le immagini */
+.row .col-6 {
+    padding: 5px;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.carousel-control-prev {
+    justify-content: start;
+    margin-left: 20px;
+    
+}
+.carousel-control-next {
+    justify-content: end;
+    margin-right: 20px;
+}
+
+/* Nascondere i controlli (frecce) di defoult*/
+.carousel-control-prev, .carousel-control-next {
+    opacity: 0; /* Rendo invisibile le frecce*/
+    transition: opacity 0.3s ease; /* Aggiungo una transizione per un effetto fluido*/
+} 
+
+/* Mostra i controlli al passaggio del mouse*/
+.carousel:hover .carousel-control-prev
+.carousel:hover .carousel-control-next {
+    opacity: 1; /* Rendo visibile le frecce*/
+    font-weight: bolder;
+}  
+
+/* Posizionamento per migliorare la visibilita*/
+.carousel-control-prev, .carousel-control-next {
+    z-index: 2; /* Le frecce sopra il contenuto*/
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: transparent; 
+    border-radius: 50%; 
+    background-size: 100%;
+    filter: drop-shadow(2px 2px 2px black);
+}
+
+/* Personalizzo la dimensione e l'aspetto delle frecce*/
+.carousel-control-prev-icon::before, .carousel-control-next-icon::before {
+    font-size: 2rem; /* Aumenta la dimensione*/
+    color: white; 
+    font-weight: bold;
+}
+
+/* Effetto al passaggio del mouse*/
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+    transform: scale(1.2); 
+    transition: transform 0.2s ease-in-out;
+}
+
+.icone-grandi, .icone-medi {
+    display: flex;
+    gap: 15px;
+    padding: 5px;
+}
+.etichette {
+    gap: 10px;
+}
+
+.carousel-inner {
+    overflow: visible; /*Terzo step: Le card si sovrapongono al passagio del mous una sopra l'altra*/
+}
+
+.carousel-item > .row > div {
+    transition: transform 0.5s; /*Stap 2: applico la transizione*/
+    transition-delay: 0.3s;
+    outline: none; /*Step 8: rimuove il focus visibile e fa in modo che su schermi piccoli non si ingrandisca la paggina quando si clicca sulle immagini*/
+}
+.carousel-item > .row > div:first-child {
+    transform-origin: center left; /*Step 9: Ingrandisco l'immagine verso il centro */
+    transition-delay: 0.3s;
+}
+.carousel-item > .row > div:last-child {
+    transform-origin: center right; /*Step 9: Ingrandisco l'immagine verso il centro */
+    transition-delay: 0.3s;
+}
+
+.carousel-item > .row > div:hover {
+    cursor: pointer;
+    transform: scale(1.5); /*Step 1: la foto si ingrandisce al passaggio del mous*/
+    z-index: 10; /*Step 7: Facciamo in modo che sia la foto che l'informazione passano sopra gli altri elementi*/
+}
+
+.informazioni {
+    height: 0; /*Stap 0: Rendo invisibile l'informazione*/
+    opacity: 0; /*Stap 4: Rendo invisibile l'informazione dopo aver messo overflow visible alle card*/
+    transition: opacity 0.5s linear ; /*Step 6: Animo anche l'opacity delle informazioni*/
+}
+
+.carousel-item > .row > div:hover .informazioni {
+    opacity: 1; /*Stap 5: Quando passo sopra al mio div del carosel, l'oggetto con classe informazioni avra opacity uguale a 1*/
+}
+
+footer {
+    margin-top: 200px;
+}
+.social ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px
+}
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.info > div:first-child, .container > div:last-child {
+    margin-left: 30px;
+    padding-bottom: 5px;
+}
+.service-code {
+    border: 1px solid white;
+    width: 110px;
+    height: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+
+@media (min-width: 576px) {
+    .dropdown-menu {
+        min-width: 150px;
+        max-width: 200px;
+    }
+    .row .col-md-4 {
+        flex: 0 0 33.333%; /* 3 immagini su schermi medi */
+        max-width: 33.333%;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+}
+
+@media (min-width: 768px) {
+    .netflix-logo {
+        width: 100px;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    .dropdown-menu {
+        border: 1px solid #666;
+    }
+}
+
+
+@media (min-width: 992px) {
+    .search-input {
+        right: 300px
+    }
+    .row .col-lg-3 {
+        flex: 0 0 25%; /* 4 immagini su schermi grandi */
+        max-width: 25%;
+    }
+    
+}
+
+
+
+@media (min-width: 1200px) {
+    .netflix-logo {
+        width: 150px;
+    }
+    .menu-discessa {
+        left: -120px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .row .col-xl-2 {
+        flex: 0 0 16.666%; /* 6 immagini su schermi extra-large */
+        max-width: 16.666%;
+    }
+    
+}
